@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+  <a class="navbar-brand text-white" href="" (click)="redirectMain($event)">L O G O</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#collapsibleNavbar"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Iniciar Sesion</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Crear cuenta</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle bg-secondary text-white"
+          data-toggle="dropdown"
+          href="#"
+          >Servicios</a
+        >
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Medicos</a>
+          <a class="dropdown-item" href="#">Consultas</a>
+          <a class="dropdown-item" href="#">Laboratorios</a>
+          <a class="dropdown-item" href="#">Examenes</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

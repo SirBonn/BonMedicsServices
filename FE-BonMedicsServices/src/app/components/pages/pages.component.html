@@ -1,0 +1,11 @@
+<div [ngSwitch]="usuario.userAcces">
+  <div *ngSwitchCase="1">
+    <app-paciente></app-paciente>
+  </div>
+  <div *ngSwitchCase="2">
+    <app-medic></app-medic>
+  </div>
+  <div *ngSwitchCase="3">
+    <app-laboratorio></app-laboratorio>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<div>
+  <div>
+    <app-nav-bar></app-nav-bar>
+  </div>
+
+  <div class="LogInBody container" id="LogInBody">
+
+    <form (ngSubmit)=onSubmit() #formulario="ngForm" class="formularioLogin rounded-sm was-validated">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" [(ngModel)]="nombre" placeholder="Nombres" name="nombre" required>
+        <div class="valid-feedback"></div>
+      </div>
+      <div class="form-group">
+        <label for="usuario">Username:</label>
+        <input type="text" class="form-control" [(ngModel)]="username" placeholder="Usuario" name="usuario" required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" [(ngModel)]="password" placeholder="Ingresa tu contraseña"
+          name="password" minlength="8" required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electronico:</label>
+        <input type="email" class="form-control" [(ngModel)]="correo" placeholder="ejemplo@dominio.com" name="email"
+          required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="form-group">
+        <label for="cui">CUI:</label>
+        <input type="number" class="no-spinner form-control" [(ngModel)]="CUI"
+          placeholder="Codigo Unico de Identificacion" name="cui" required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="form-group">
+        <label for="uname">Direccion:</label>
+        <input type="text" class="form-control" [(ngModel)]="direccion" placeholder="Ingresa tu direccion"
+          name="usuario" required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="d-flex justify-content-between input-group mb-3">
+        <div class="form-group">
+          <label for="telefono">Telefono:</label>
+          <input type="number" class="no-spinner form-control" [(ngModel)]="telefono" placeholder="numero de telefono"
+            name="telefono" max="99999999" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="form-group">
+          <label for="uname">Fecha de nacimiento:</label>
+          <input type="date" class="form-control" [(ngModel)]="fechaNacimiento" placeholder="Fecha de nacimiento"
+            name="usuario" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="form-group">
+          <label for="uname">Tipo de usuario:</label>
+          <span>
+            <div class="input-group-prepend">
+              <select name="userAcces" [(ngModel)]="userAcces" class="custom-select" required>
+                <option value="1">Paciente</option>
+                <option value="2">Medico</option>
+                <option value="3">Laboratorio</option>
+              </select>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="formulario.invalid" class="mb-2 mr-sm-3 btn btn-secondary">Acceder</button>
+      <button type="reset" class="mb-2 mr-sm-3 btn btn-secondary">Reset</button>
+
+    </form>
+
+
+  </div>
+
+</div>

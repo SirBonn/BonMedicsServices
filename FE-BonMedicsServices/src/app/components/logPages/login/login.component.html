@@ -1,0 +1,29 @@
+<div>
+  <div>
+    <app-nav-bar></app-nav-bar>
+  </div>
+
+  <div class="LogInBody container" id="LogInBody">
+
+    <form (ngSubmit)=submitForm() class="formularioLogin rounded-sm was-validated">
+      <div class="form-group">
+        <label for="uname">Username:</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario" placeholder="Ingresa tu usuario" name="usuario" required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" [(ngModel)]="contrasena" placeholder="Ingresa tu contraseña" name="contrasena" required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback"></div>
+      </div>
+
+      <button type="submit" class="mb-2 mr-sm-3 btn btn-secondary">Acceder</button>
+      <button type="reset" class="mb-2 mr-sm-3 btn btn-secondary">Reset</button>
+
+    </form>
+
+  </div>
+
+</div>
