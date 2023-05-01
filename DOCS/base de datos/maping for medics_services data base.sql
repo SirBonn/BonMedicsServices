@@ -7,10 +7,10 @@ CREATE TABLE IF NOT EXISTS administradores(
 	codigo INT NOT NULL AUTO_INCREMENT,
 	nombre VARCHAR(45) NOT NULL,
 	usuario VARCHAR(45) NOT NULL,
-	contrasena varchar(66) NOT NULL,
+	contrasena VARCHAR(66) NOT NULL,
 	telefono INT(8) NOT NULL,
 	correo VARCHAR(45) NOT NULL,
-	fechaNacimiento DATE NOT NULL,
+	fechaNacimiento DATE NULL,
 	saldo decimal(10,2) NULL DEFAULT 0,
 	PRIMARY KEY(codigo)	
 );
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS medicos(
 	telefono INT(8) NOT NULL,
 	correo VARCHAR(45) NOT NULL,
 	direccion VARCHAR(75) NOT NULL,
-	fechaNacimiento DATE NOT NULL,
+	fechaNacimiento DATE NULL,
 	saldo decimal(10,2) NULL DEFAULT 0,
 	PRIMARY KEY(codigo)	
 );
@@ -38,10 +38,11 @@ CREATE TABLE IF NOT EXISTS pacientes(
 	telefono INT(8) NOT NULL,
 	correo VARCHAR(45) NOT NULL,
 	direccion VARCHAR(75) NOT NULL,
-	fechaNacimiento DATE NOT NULL,
+	fechaNacimiento DATE NULL,
 	saldo decimal(10,2) NULL DEFAULT 0,
 	PRIMARY KEY(codigo)
 );
+
 
 CREATE TABLE IF NOT EXISTS especialidades(
 	codigo INT NOT NULL,
@@ -71,11 +72,11 @@ CREATE TABLE IF NOT EXISTS laboratorios(
 	correo VARCHAR(45) NOT NULL,
 	direccion VARCHAR(75) NOT NULL,
 	saldo decimal(10,2) NULL DEFAULT 0,
-	fechaNacimiento DATE NOT NULL,
-	Examen_codigo INT NOT NULL,
-	PRIMARY KEY(codigo),
-	FOREIGN KEY (Examen_codigo) REFERENCES tipos_examenes(codigo)	
+	fechaNacimiento DATE NULL,
+	PRIMARY KEY(codigo)
 );
+
+
 
 CREATE TABLE IF NOT EXISTS especialidades_medico(
 	Medico_codigo INT,
@@ -148,4 +149,9 @@ CREATE TABLE IF NOT EXISTS examenRealizado(
 	FOREIGN KEY(laboratorista_codigo) REFERENCES laboratorios(codigo),
 	FOREIGN KEY(citaExamen_codigo) REFERENCES tipos_examenes(codigo)
 );
+
+INSERT administradores VALUES (1, 'admin', 'admin', 'admin', 54775114, 'byronvasquez@gmail.com', null, null);
+INSERT medicos VALUES (1, 'admin', 'admin', 'admin', 2750217421202, 54775114, 'byronvasquez@gmail.com', 'direccion 11111', null, null);
+INSERT pacientes VALUES (1, 'admin', 'admin', 'admin', 2750217421202, 54775114, 'byronvasquez@gmail.com', 'direccion 11111', null, null);
+INSERT laboratorios VALUES (1, 'admin', 'admin', 'admin', 2750217421202, 54775114, 'byronvasquez@gmail.com', 'direccion 11111', null, null);
 
